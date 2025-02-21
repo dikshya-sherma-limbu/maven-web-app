@@ -27,7 +27,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to COMP367</h1>
+        <h1>Good Afternoon ,Dikshya ! Welcome to COMP367</h1>
     </div>
 </body>
 </html>
