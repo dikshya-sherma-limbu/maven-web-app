@@ -27,7 +27,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>Good Afternoon ,Dikshya ! Welcome to COMP367</h1>
+         <%
+               java.util.Calendar calendar = java.util.Calendar.getInstance();
+               int hour = calendar.get(java.util.Calendar.HOUR_OF_DAY);
+               String greeting = (hour < 12) ? "Good Morning" : "Good Afternoon";
+            %>
+            <h1><%= greeting %>, Dikshya! Welcome to COMP367</h1>
+            </div>
     </div>
 </body>
 </html>
