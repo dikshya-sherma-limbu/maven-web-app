@@ -17,13 +17,14 @@ pipeline {
                 archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
             }
         }
-        post {
+    }
+    post {
             success {
             echo 'Build successful! The WAR file is ready for deployment.'
             }
             failure {
             echo 'Build failed! Please check the logs for details.'
             }
-        }
     }
+    
 }
