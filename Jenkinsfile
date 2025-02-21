@@ -11,14 +11,18 @@ pipeline {
             steps {
                 bat 'mvn clean package'
             }
-        } stage('Archive') {
+        }
+        stage('Archive') {
             steps {
                 archiveArtifacts artifacts: 'target/*.war', followSymlinks: false
             }
         }
-        stage('Test') {
-            steps {
-                bat 'mvn test'
+        post {
+            success {
+            echo 'Build successful! The WAR file is ready for deployment.'
+            }
+            failure {
+            echo 'Build failed! Please check the logs for details.'
             }
         }
     }
